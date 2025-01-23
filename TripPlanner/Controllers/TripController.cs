@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TripPlanner.Data;
+using TripPlanner.Data.Models;
 using TripPlanner.ViewModels;
 
 namespace TripPlanner.Controllers
@@ -30,6 +31,24 @@ namespace TripPlanner.Controllers
             return View(trips);
         }
 
+        [HttpGet]
+        public IActionResult TripCreate()
+        {
+            var trip = new TripInfoViewModel();
 
+            return View(trip);
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> TripCreate(TripInfoViewModel viewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(viewModel);
+            }
+
+            return View(viewModel);
+        }
     }
 }

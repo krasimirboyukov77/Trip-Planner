@@ -24,8 +24,8 @@ namespace TripPlanner.ViewModels
             MinimumLength = ValidationConstants.TripDestinationMinLength)]
         public string Destination { get; set; } = null!;
 
-        public DateTime? StartDate { get; set; }
-        public DateTime? EndDate { get; set; }
+        public string? StartDate { get; set; }
+        public string? EndDate { get; set; }
 
         [MaxLength(ValidationConstants.TripDescriptionMaxLength, ErrorMessage = ErrorMessages.TripDescriptionErrorMessage)]
         public string? Description { get; set; }
