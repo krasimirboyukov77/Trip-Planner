@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TripPlanner.Data\TripPlanner.Data.csproj" />
+    <ProjectReference Include="..\TripPlanner.ViewModels\TripPlanner.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>

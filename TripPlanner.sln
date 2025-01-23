@@ -3,13 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripPlanner", "TripPlanner\TripPlanner.csproj", "{03D7494E-D9D9-44C2-9FDB-607C39FD940E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TripPlanner", "TripPlanner\TripPlanner.csproj", "{03D7494E-D9D9-44C2-9FDB-607C39FD940E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TripPlanner.Data", "TripPlanner.Data", "{CED1F45B-F0C0-4B63-B968-E478855C02AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripPlanner.Data", "TripPlanner.Data\TripPlanner.Data.csproj", "{66B9D190-951B-4BD7-B7AD-0BD4CD6753FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TripPlanner.Data", "TripPlanner.Data\TripPlanner.Data.csproj", "{66B9D190-951B-4BD7-B7AD-0BD4CD6753FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripPlanner.Data.Models", "TripPlanner.Data.Models\TripPlanner.Data.Models.csproj", "{E573B5D6-634A-40AA-9008-3E86B1EDE97D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TripPlanner.Data.Models", "TripPlanner.Data.Models\TripPlanner.Data.Models.csproj", "{E573B5D6-634A-40AA-9008-3E86B1EDE97D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TripPlanner.ViewModels", "TripPlanner.ViewModels", "{1F234151-B782-4281-B87A-845D7AAB53A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripPlanner.ViewModels", "TripPlanner.ViewModels\TripPlanner.ViewModels.csproj", "{A2131833-3AC6-4F3B-A0AE-10699CAE61F6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{40BD292C-1BCF-47A5-9E85-63EBB5DF7AC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripPlanner.Common", "TripPlanner.Common\TripPlanner.Common.csproj", "{4DFCD59E-A61B-43A5-8977-29EF98546BB5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +37,14 @@ Global
 		{E573B5D6-634A-40AA-9008-3E86B1EDE97D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E573B5D6-634A-40AA-9008-3E86B1EDE97D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E573B5D6-634A-40AA-9008-3E86B1EDE97D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2131833-3AC6-4F3B-A0AE-10699CAE61F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2131833-3AC6-4F3B-A0AE-10699CAE61F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2131833-3AC6-4F3B-A0AE-10699CAE61F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2131833-3AC6-4F3B-A0AE-10699CAE61F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DFCD59E-A61B-43A5-8977-29EF98546BB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DFCD59E-A61B-43A5-8977-29EF98546BB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DFCD59E-A61B-43A5-8977-29EF98546BB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DFCD59E-A61B-43A5-8977-29EF98546BB5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,6 +52,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{66B9D190-951B-4BD7-B7AD-0BD4CD6753FB} = {CED1F45B-F0C0-4B63-B968-E478855C02AA}
 		{E573B5D6-634A-40AA-9008-3E86B1EDE97D} = {CED1F45B-F0C0-4B63-B968-E478855C02AA}
+		{A2131833-3AC6-4F3B-A0AE-10699CAE61F6} = {1F234151-B782-4281-B87A-845D7AAB53A1}
+		{4DFCD59E-A61B-43A5-8977-29EF98546BB5} = {40BD292C-1BCF-47A5-9E85-63EBB5DF7AC1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EF9591F5-F204-4072-B1A6-5930379D5FAB}
