@@ -1,5 +1,51 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Trip</title>
+    <link rel="stylesheet" href="~/css/tripCreatingStyle.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header class="header">
+        <h1>Create Your Trip</h1>
+        <p>Plan every step of your journey with ease!</p>
+    </header>
+
+    <main class="main-content">
+        <section class="trip-form">
+            <h2>Trip Details</h2>
+            <form>
+                <label for="trip-name">Trip Name:</label>
+                <input type="text" id="trip-name" placeholder="E.g., Summer Vacation in Italy">
+
+                <label for="start-date">Start Date:</label>
+                <input type="date" id="start-date">
+
+                <label for="end-date">End Date:</label>
+                <input type="date" id="end-date">
+
+                <button type="button" id="add-event-button">Add an Event</button>
+            </form>
+        </section>
+
+        <section class="map-and-events">
+            <div id="map">
+                <p>Map will load here (use an interactive map API like Google Maps).</p>
+            </div>
+
+            <div class="event-list">
+                <h2>Your Events</h2>
+                <ul id="event-list">
+                    <li>No events added yet.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Trip Planner. All rights reserved.</p>
+    </footer>
+</body>
+</html>
