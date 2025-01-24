@@ -1,12 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.VisualBasic;
-using System;
-using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using TripPlanner.Data.Models;
 using TripPlanner.Repository.Contracts;
 using TripPlanner.Services.Interfaces;
@@ -26,6 +22,25 @@ namespace TripPlanner.Services
          { 
             this._tripRepository = tripRepository;
          }
+
+        public async Task<ICollection<TripInfoViewModel>> GetTripsDetails()
+        {
+            var trips = await _tripRepository.GetAllAttached()
+                .AsNoTracking()
+                .Select(t => new TripInfoViewModel()
+                {
+                    Id = t.Id,
+                    Name = t.Name,
+                    Destination = t.Destination,
+                    Description = t.Description,
+                    StartDate = t.StartDate.ToString(),
+                    EndDate = t.EndDate.ToString(),
+                })
+                .ToListAsync();
+
+            return trips;
+               
+        }
 
         public async Task<bool> CreateTripAsync(TripInfoViewModel viewModel)
         {

@@ -2,34 +2,35 @@
 using Microsoft.EntityFrameworkCore;
 using TripPlanner.Data;
 using TripPlanner.Data.Models;
+using TripPlanner.Services.Interfaces;
 using TripPlanner.ViewModels;
 
 namespace TripPlanner.Controllers
 {
     public class TripController : Controller
     {
-        private readonly ApplicationDbContext _dbContext;
+        private readonly ITripService _tripService;
 
-        public TripController(ApplicationDbContext dbContext)
+        public TripController(ITripService tripService)
         {
-            this._dbContext = dbContext;
+            this._tripService = tripService;
         }
 
-        public async Task<IActionResult> Index()
-        {
-            var trips = await _dbContext.Trips.Select(t=> new TripInfoViewModel
-            {
-                Id = t.Id,
-                Name = t.Name,
-                Destination = t.Destination,
-                StartDate = t.StartDate,
-                EndDate = t.EndDate,
-                Description = t.Description,
-            }).ToListAsync();
+        //public async Task<IActionResult> Index()
+        //{
+        //    var trips = await _dbContext.Trips.Select(t=> new TripInfoViewModel
+        //    {
+        //        Id = t.Id,
+        //        Name = t.Name,
+        //        Destination = t.Destination,
+        //        StartDate = t.StartDate,
+        //        EndDate = t.EndDate,
+        //        Description = t.Description,
+        //    }).ToListAsync();
 
 
-            return View(trips);
-        }
+        //    return View(trips);
+        //}
 
         [HttpGet]
         public IActionResult TripCreate()
@@ -47,6 +48,8 @@ namespace TripPlanner.Controllers
             {
                 return View(viewModel);
             }
+
+            await _tripService.CreateTripAsync(viewModel);
 
             return View(viewModel);
         }
