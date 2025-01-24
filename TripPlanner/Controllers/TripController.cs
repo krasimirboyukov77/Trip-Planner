@@ -16,21 +16,12 @@ namespace TripPlanner.Controllers
             this._tripService = tripService;
         }
 
-        //public async Task<IActionResult> Index()
-        //{
-        //    var trips = await _dbContext.Trips.Select(t=> new TripInfoViewModel
-        //    {
-        //        Id = t.Id,
-        //        Name = t.Name,
-        //        Destination = t.Destination,
-        //        StartDate = t.StartDate,
-        //        EndDate = t.EndDate,
-        //        Description = t.Description,
-        //    }).ToListAsync();
+        public async Task<IActionResult> Index()
+        {
+            var trips = await _tripService.GetTripsDetails();
 
-
-        //    return View(trips);
-        //}
+            return View(trips);
+        }
 
         [HttpGet]
         public IActionResult TripCreate()

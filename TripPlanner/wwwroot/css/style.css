@@ -1,0 +1,123 @@
+﻿/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+}
+
+/* Header */
+.header {
+    background: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Navigation Bar */
+.navbar {
+    background: #333;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 0;
+}
+
+    .navbar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+    }
+
+    .navbar li {
+        margin: 0 1rem;
+    }
+
+    .navbar a {
+        color: #fff;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        transition: background 0.3s;
+    }
+
+        .navbar a:hover {
+            background: #575757;
+            border-radius: 5px;
+        }
+
+/* Main Content */
+.main-content {
+    padding: 1.5rem;
+}
+
+    .main-content h2 {
+        color: #007bff;
+        margin-bottom: 1rem;
+    }
+
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.destination-card {
+    background: #fff;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+    .destination-card h3 {
+        color: #333;
+    }
+
+/* Form */
+.planner-form {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+    .planner-form label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+    }
+
+    .planner-form input,
+    .planner-form button {
+        width: 100%;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    .planner-form button {
+        background: #007bff;
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+        .planner-form button:hover {
+            background: #0056b3;
+        }
+
+/* Footer */
+.footer {
+    text-align: center;
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}

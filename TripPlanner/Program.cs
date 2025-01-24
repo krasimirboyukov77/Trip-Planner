@@ -3,6 +3,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using TripPlanner.Data;
 using TripPlanner.Data.Models;
+using TripPlanner.Repository;
+using TripPlanner.Repository.Contracts;
+using TripPlanner.Services;
+using TripPlanner.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,6 +32,10 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole<Guid>>(options =>
                .AddUserManager<UserManager<ApplicationUser>>()
                .AddDefaultUI()
                .AddDefaultTokenProviders();
+
+builder.Services.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
+builder.Services.AddScoped<IBaseService, BaseService>();
+builder.Services.AddScoped<ITripService, TripService>();
 
 builder.Services.AddRazorPages();
 

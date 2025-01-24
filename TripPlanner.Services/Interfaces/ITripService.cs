@@ -9,6 +9,7 @@ namespace TripPlanner.Services.Interfaces
 {
     public interface ITripService
     {
+        Task<ICollection<TripInfoViewModel>> GetTripsDetails();
         Task<bool> CreateTripAsync(TripInfoViewModel viewModel);
     }
 }
