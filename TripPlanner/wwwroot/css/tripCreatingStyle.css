@@ -80,6 +80,34 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+    .event-list label,
+    .event-list select,
+    .event-list button {
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    .event-list select,
+    .event-list button {
+        width: 100%;
+        padding: 0.5rem;
+        font-size: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    .event-list button {
+        background: #007bff;
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+        .event-list button:hover {
+            background: #0056b3;
+        }
+
     .event-list ul {
         list-style: none;
         padding: 0;
@@ -92,6 +120,7 @@ body {
         border-left: 4px solid #007bff;
         border-radius: 5px;
     }
+
 
 .footer {
     text-align: center;
