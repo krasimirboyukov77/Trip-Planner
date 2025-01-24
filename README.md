@@ -1,1 +1,1 @@
-🚧This app is under construction!🚧
+🚧This website is under construction!🚧
