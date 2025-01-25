@@ -28,7 +28,7 @@ namespace TripPlanner.Controllers
         {
             var trip = new TripInfoViewModel();
             
-            var mapboxToken = "pk.eyJ1IjoiYm90c2hvdDc3IiwiYSI6ImNtNmJ2bDBxbDBjeWsybHFzdjU3ZWVxcDYifQ.Hi59wituRIfDV0VWL4b5Kw";
+            var mapboxToken = "MapBox.Token";
             ViewBag.MapboxToken = mapboxToken;
 
             return View(trip);
