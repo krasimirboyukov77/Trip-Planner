@@ -10,10 +10,13 @@ namespace TripPlanner.Controllers
     public class TripController : Controller
     {
         private readonly ITripService _tripService;
+        private readonly IConfiguration _configuration;
 
-        public TripController(ITripService tripService)
+        public TripController(ITripService tripService,
+            IConfiguration configuration)
         {
             this._tripService = tripService;
+            this._configuration = configuration;
         }
 
         public async Task<IActionResult> Index()
@@ -28,7 +31,7 @@ namespace TripPlanner.Controllers
         {
             var trip = new TripInfoViewModel();
             
-            var mapboxToken = "pk.eyJ1IjoiYm90c2hvdDc3IiwiYSI6ImNtNmJ2bDBxbDBjeWsybHFzdjU3ZWVxcDYifQ.Hi59wituRIfDV0VWL4b5Kw";
+            var mapboxToken = _configuration["API Token:Mapbox:AccessToken"];
             ViewBag.MapboxToken = mapboxToken;
 
             return View(trip);
