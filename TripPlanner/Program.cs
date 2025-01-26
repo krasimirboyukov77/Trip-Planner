@@ -1,9 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.IdentityModel.Protocols.Configuration;
-using System.Configuration;
-using System.Numerics;
+
 using TripPlanner.Data;
 using TripPlanner.Data.Models;
 using TripPlanner.Repository;
@@ -41,6 +38,7 @@ builder.Services.AddScoped<IBaseService, BaseService>();
 builder.Services.AddScoped<ITripService, TripService>();
 builder.Services.AddHttpClient();
 builder.Services.Configure<GooglePlacesOptions>(builder.Configuration.GetSection("API Token:Mapbox:Places"));
+
 
 builder.Services.AddRazorPages();
 
