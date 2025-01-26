@@ -13,7 +13,7 @@ public class PlacesController : Controller
     public PlacesController(IHttpClientFactory httpClientFactory, IConfiguration configuration)
     {
         _httpClientFactory = httpClientFactory;
-        _googleApiKey = configuration["API Token:Google:Places"];
+        _googleApiKey = configuration["API Token:Mapbox:Places"];
     }
 
     // This will be triggered when the form is submitted with the city name
