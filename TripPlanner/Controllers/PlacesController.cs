@@ -21,7 +21,7 @@ public class PlacesController : Controller
     {
         if (string.IsNullOrWhiteSpace(city))
         {
-            return View("Index"); // Show an empty or error page
+            return View("Error", new ErrorViewModel { Message = "City name is required." });
         }
 
         var client = _httpClientFactory.CreateClient();
@@ -32,7 +32,6 @@ public class PlacesController : Controller
 
         if (!geocodeResponse.IsSuccessStatusCode)
         {
-            // Handle failure
             return View("Error", new ErrorViewModel { Message = "Unable to get city coordinates." });
         }
 
@@ -44,7 +43,6 @@ public class PlacesController : Controller
             return View("Error", new ErrorViewModel { Message = "City not found." });
         }
 
-        // Get latitude and longitude from the first geocode result
         var location = geocodeResult.results[0].geometry.location;
         double lat = location.lat;
         double lng = location.lng;
@@ -55,7 +53,6 @@ public class PlacesController : Controller
 
         if (!placesResponse.IsSuccessStatusCode)
         {
-            // Handle failure
             return View("Error", new ErrorViewModel { Message = "Unable to fetch places data." });
         }
 
@@ -75,9 +72,8 @@ public class PlacesController : Controller
             }
         }
 
-        // Pass the places data and the city parameter to the view
         ViewData["City"] = city;
-        return View(placesResult.results); // You can pass other data if necessary
+        return View(placesResult.results);
     }
 
 
